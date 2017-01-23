@@ -37,8 +37,8 @@
           <p>This application gives you opportunity to plan your tasks.
               You can create, delate and edit your tasks. Feel free to download and use it.</p>
               <br /><br />
-              <p class="text-center"><a href="#" class="btn btn-md btn-default link">See Demo</a></p>
-              <p class="text-center"><a href="#" class="link"><span class="glyphicon glyphicon glyphicon-chevron-down glyph-sign"></span></a></p>
+              <p class="text-center" ><a href="#" class="btn btn-md btn-default link">See Demo</a></p>
+              <p class="text-center"id="scroll-point"><a href="#" class="link"><span class="glyphicon glyphicon glyphicon-chevron-down glyph-sign"></span></a></p>
         </div><!--/col-sm-6-->
       </div><!--/row-->
     </div><!--/container-fluid-->
@@ -47,7 +47,7 @@
     <div class="container-fluid container-icons" id="con-icons">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-          <a class="btn btn-default btn-sm" href="download.php?file=Bootstrap-calendar-master.rar" role="button"><span class='glyphicon glyphicon-download-alt'></span> Download v.1.0 </a>
+          <a class="btn btn-default btn-sm" href="https://github.com/agatar/todo-list/archive/master.zip" role="button"><span class='glyphicon glyphicon-download-alt'></span> Download project </a>
         </div><!--/col-sm-8-->
       </div><!--/row-->
     </div><!--/container-fluid-->
@@ -73,10 +73,11 @@
                 <div id="display-alert-error" class="alert alert-danger hidden"></div>
 
                 <!--Dynamically render todos from database-->
-                <div id="all-todos-display" class="text-center">
+                <div id="all-todos-display" class="text-left"></div><!--end of rendering todos-->
 
-                </div><!--end of rendering todos-->
-              </div><!--/all-tasks-tab-->
+
+
+              </div><!--/all-todos-tab-->
 
               <!--Secound tab - will be form to add new task-->
               <div role="tabpanel" class="tab-pane" id="new-todo-tab">

@@ -12,9 +12,8 @@ p{
 }
 
 div.container-main{
-  min-height:600px;
-  background: url("../images/background-1.jpg") center center no-repeat;
-
+  min-height:550px;
+  background: url("../images/background.jpg") center center no-repeat;
 }
 .container-text{
   background-color:#EEEEEE;
