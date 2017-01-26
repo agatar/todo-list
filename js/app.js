@@ -20,6 +20,39 @@ $(document).ready(function(){
 
 //APPLICATION FUNCTIONS AND EVENT HANDLERS//
 
+function deleteItem(id){
+
+  $.ajax({
+    url:"deleteItem.php",
+    type:"POST",
+    data:{item: id}
+  }).done(function(response){
+    var res = JSON.parse(response);
+    if(res.success){
+      getAllTodos();
+
+      $('#display-alert-success').html(res.info).removeClass('hidden');
+      setTimeout(function(){
+        $('#display-alert-success').html("").addClass('hidden');
+      },3000);
+
+    }else if(!res.success){
+      $('#display-alert-error').html(res.info).removeClass('hidden');
+      setTimeout(function(){
+        $('#display-alert-error').html("").addClass('hidden');
+      },3000);
+    }
+
+  }).fail(function(response){
+    $('#display-alert-error').html("Delete process unsuccessful, please try again!").removeClass('hidden');
+      setTimeout(function(){
+      $('#display-alert-error').html("").addClass('hidden');
+    },3000);
+  });
+}
+
+
+
 
 function isEmpty(value){
   if(value == ""){
@@ -71,7 +104,7 @@ function getAllTodos(){
     }else if(!res.success){
       var info = "<div class='alert alert-info text-center' role='alert'>"
         +  "<strong>You dont have any added task yet. <br />Why not to add one?</strong>"
-        +  "Click button new todo!"
+        +  " Click button new todo!"
         +  "</div>";
       $('#all-todos-display').html(info);
     }
@@ -86,7 +119,13 @@ function getAllTodos(){
 
   getAllTodos();
 
-//Click ADD ITTEM button - event handler//
+//Click Delete ITEM button - event handler
+$(document).on('click', '.todo-item-delete', function(){
+  var id = $(this).attr('data-id');
+  deleteItem(id);
+  });
+
+//Click ADD ITEM button - event handler//
 $('#new-todo-submit').click(function(){
  var title = $('#new-todo-title').val();
  var description = $('#new-todo-description').val();

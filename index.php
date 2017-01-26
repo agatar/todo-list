@@ -6,6 +6,8 @@
     <title>To do List</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   </head>
 
   <body class="body">
@@ -38,7 +40,7 @@
               You can create, delate and edit your tasks. Feel free to download and use it.</p>
               <br /><br />
               <p class="text-center" ><a href="#" class="btn btn-md btn-default link">See Demo</a></p>
-              <p class="text-center"id="scroll-point"><a href="#" class="link"><span class="glyphicon glyphicon glyphicon-chevron-down glyph-sign"></span></a></p>
+              <p class="text-center" id="scroll-point"><a href="#" class="link"><span class="glyphicon glyphicon glyphicon-chevron-down glyph-sign"></span></a></p>
         </div><!--/col-sm-6-->
       </div><!--/row-->
     </div><!--/container-fluid-->
@@ -47,7 +49,7 @@
     <div class="container-fluid container-icons" id="con-icons">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-          <a class="btn btn-default btn-sm" href="https://github.com/agatar/todo-list/archive/master.zip" role="button"><span class='glyphicon glyphicon-download-alt'></span> Download project </a>
+          <a class="btn btn-default btn-md" href="https://github.com/agatar/todo-list/archive/master.zip" role="button"><span class='glyphicon glyphicon-download-alt'></span> Download project </a>
         </div><!--/col-sm-8-->
       </div><!--/row-->
     </div><!--/container-fluid-->
