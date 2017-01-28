@@ -20,6 +20,12 @@ $(document).ready(function(){
 
 //APPLICATION FUNCTIONS AND EVENT HANDLERS//
 
+function showDeleteModal(id){
+  //Fetched item id and set attribute value to id
+  $('#modal-delete-id').attr('value',id);
+  $('#modal-delete').modal('show');
+}
+
 function deleteItem(id){
 
   $.ajax({
@@ -48,10 +54,10 @@ function deleteItem(id){
       setTimeout(function(){
       $('#display-alert-error').html("").addClass('hidden');
     },3000);
+  }).always(function(){
+    $('#modal-delete').modal('hide');
   });
 }
-
-
 
 
 function isEmpty(value){
@@ -104,7 +110,7 @@ function getAllTodos(){
     }else if(!res.success){
       var info = "<div class='alert alert-info text-center' role='alert'>"
         +  "<strong>You dont have any added task yet. <br />Why not to add one?</strong>"
-        +  " Click button new todo!"
+        +  " Click New todo!"
         +  "</div>";
       $('#all-todos-display').html(info);
     }
@@ -119,11 +125,17 @@ function getAllTodos(){
 
   getAllTodos();
 
-//Click Delete ITEM button - event handler
+//Click Delete ITEM button - event handler, get item id and call out function showDeleteModal() wchich store item id in hidden modal field
 $(document).on('click', '.todo-item-delete', function(){
   var id = $(this).attr('data-id');
-  deleteItem(id);
-  });
+  showDeleteModal(id);
+});
+//Click delete modal button - event handler,get item id from hidden field form modal and call out function deleteItem()
+$('#modal-delete-button').click(function(){
+    var id = $('#modal-delete-id').attr('value');
+    deleteItem(id);
+});
+
 
 //Click ADD ITEM button - event handler//
 $('#new-todo-submit').click(function(){
@@ -167,7 +179,7 @@ $('#new-todo-submit').click(function(){
 
 });
 
-//RESET event handler//
+//Click RESET button - event handler
 $('#new-todo-reset').click(function(){
   resetForm('#new-todo-form');
 

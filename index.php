@@ -77,9 +77,7 @@
                 <!--Dynamically render todos from database-->
                 <div id="all-todos-display" class="text-left"></div><!--end of rendering todos-->
 
-
-
-              </div><!--/all-todos-tab-->
+                </div><!--/all-todos-tab-->
 
               <!--Secound tab - will be form to add new task-->
               <div role="tabpanel" class="tab-pane" id="new-todo-tab">
@@ -124,6 +122,28 @@
       </div><!--/row-->
     </div><!--/container-->
    </div><!--/container-footer-->
+
+   <!-- Modal delete-->
+    <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="deleteModalLabel">Delete item</h4>
+          </div><!--/modal-header-->
+          <div class="modal-body">
+              <h5>Do you really want to delete this item?</h5>
+              <!--hidden modal field-->
+              <input type="hidden" id="modal-delete-id" value="">
+          </div><!--/modal-body-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No!</button>
+            <button type="button" class="btn btn-danger" id="modal-delete-button">Yes, sure!</button>
+          </div><!--/modal footer-->
+        </div><!--/modal conntent-->
+      </div><!--modal-dialog-->
+    </div><!--modal fade-->
+
 
     <script src="js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
