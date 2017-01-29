@@ -12,7 +12,3 @@ if(count($items)== 0){
 }
   echo json_encode(['success'=> true, 'items'=> $items]);
   exit;
-
-
-
-?>

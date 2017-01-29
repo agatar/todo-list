@@ -59,6 +59,36 @@ function deleteItem(id){
   });
 }
 
+function editItem(object){
+  $.ajax({
+    type:'POST',
+    url:'editItem.php',
+    data: object
+  }).done(function(response){
+    var res = JSON.parse(response);
+    if(res.success == true){
+      getAllTodos();
+      $('#display-alert-success').html(res.info).removeClass('hidden');
+      setTimeout(function(){
+        $('#display-alert-success').html("").addClass('hidden');
+      },3000);
+    }else if(res.success == false){
+      $('#display-alert-error').html(res.info).removeClass('hidden');
+      setTimeout(function(){
+        $('#display-alert-error').html("").addClass('hidden');
+      },3000);
+    }
+  }).fail(function(response){
+    $('#display-alert-error').html("An expected error, please try again!").removeClass('hidden');
+    setTimeout(function(){
+      $('#display-alert-error').html("").addClass('hidden');
+    },3000);
+  }).always(function(){
+    $('#modal-edit').modal('hide');
+  });
+
+}
+
 
 function isEmpty(value){
   if(value == ""){
@@ -134,6 +164,26 @@ $(document).on('click', '.todo-item-delete', function(){
 $('#modal-delete-button').click(function(){
     var id = $('#modal-delete-id').attr('value');
     deleteItem(id);
+});
+
+//Click Edit ITEM button - event handler, fetch id, title and description from panel and store them in hidden modal fields, show modal
+$(document).on('click','.todo-item-edit', function(){
+  var id = $(this).attr('data-id');
+  var title = $('.panel-title[data-id="'+id+'"]').html();
+  var description = $('.panel-body[data-id="'+id+'"]').html();
+  $('#modal-edit-id').attr('value',id);
+  $('#modal-edit-title').attr('value',title);
+  $('#modal-edit-description').attr('value',description);
+  $('#modal-edit').modal('show');
+});
+//Click Edit Item button in modal - event handler, fetch value of id, title, description and pass it to function
+$('#modal-edit-button').click(function(){
+  var id = $('#modal-edit-id').val();
+  var title = $('#modal-edit-title').val();
+  var description = $('#modal-edit-description').val();
+  var object = {id: id, title: title, description: description};
+  editItem(object);
+
 });
 
 

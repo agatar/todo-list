@@ -10,6 +10,3 @@ if($response == true){
 } else {
   echo json_encode(['success'=>false,"info"=>"There was a problem with deleting an item, please try again!"]);
 }
-
-
-?>

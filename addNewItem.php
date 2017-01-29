@@ -16,9 +16,3 @@
   }else{
     echo json_encode(["success"=>false, "info"=>"There is an error on the backend site!"]);
   }
-
-
-
-
-
-?>

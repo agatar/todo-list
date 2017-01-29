@@ -74,6 +74,11 @@
                 <div id="display-alert-success" class="alert alert-success hidden"></div>
                 <div id="display-alert-error" class="alert alert-danger hidden"></div>
 
+                <div class="text-right">
+                  <button class="btn btn-danger">Clear All Items!</button>
+                </div><!--/text-right-->
+                <br />
+
                 <!--Dynamically render todos from database-->
                 <div id="all-todos-display" class="text-left"></div><!--end of rendering todos-->
 
@@ -143,6 +148,39 @@
         </div><!--/modal conntent-->
       </div><!--modal-dialog-->
     </div><!--modal fade-->
+
+    <!-- Modal edit -->
+    <div class="modal fade" tabindex="-1"  id="modal-edit" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Edit item</h4>
+            </div><!--/modal-header-->
+            <div class="modal-body">
+               <div class="form-group">
+                 <label for="edit-title">Title</label>
+                 <!--modal title field-->
+                 <input type="text" class="form-control" id="modal-edit-title" placeholder="Title">
+               </div><!--/form-group-->
+               <div class="form-group">
+                 <label for="edit-description">Description</label>
+                 <!--modal description field-->
+                 <input type="text" class="form-control"  id="modal-edit-description" placeholder="Description">
+               </div><!--/form-group-->
+               <!--hidden modal item id field-->
+               <input type="hidden" id="modal-edit-id" value="">
+            </div><!--/modal-body-->
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success" id="modal-edit-button">Edit item</button>
+            </div><!--modal-footer-->
+          </form>
+        </div><!-- /modal-content -->
+      </div><!-- /modal-dialog -->
+    </div><!-- /modal fade-->
 
 
     <script src="js/jquery.js"></script>
