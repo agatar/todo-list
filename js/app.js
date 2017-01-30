@@ -20,6 +20,35 @@ $(document).ready(function(){
 
 //APPLICATION FUNCTIONS AND EVENT HANDLERS//
 
+function clearAll(){
+  $.ajax({
+    type:'GET',
+    url:'clearAllItems.php'
+
+  }).done(function(response){
+    var res = JSON.parse(response);
+    if(res.success){
+      $('#display-alert-success').html(res.info).removeClass('hidden');
+      setTimeout(function(){
+        $('#display-alert-success').html("").addClass('hidden');
+      },3000);
+    }else if(!res.success){
+      $('#display-alert-error').html(res.info).removeClass('hidden');
+      setTimeout(function(){
+        $('#display-alert-error').html("").addClass('hidden');
+      },3000);
+    }
+  }).fail(function(response){
+    $('#display-alert-error').html("Clear all items unsuccessful, please try again!").removeClass('hidden');
+      setTimeout(function(){
+      $('#display-alert-error').html("").addClass('hidden');
+    },3000);
+  }).always(function(){
+    $('#modal-clear-all').modal('hide');
+  });
+  getAllTodos();
+}
+
 function showDeleteModal(id){
   //Fetched item id and set attribute value to id
   $('#modal-delete-id').attr('value',id);
@@ -183,7 +212,11 @@ $('#modal-edit-button').click(function(){
   var description = $('#modal-edit-description').val();
   var object = {id: id, title: title, description: description};
   editItem(object);
+});
 
+//Click CLEAR ALL ITEMS button - event handler
+$('#btn-clear').click(function(){
+  clearAll();
 });
 
 

@@ -16,10 +16,10 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-            <h4>AGATAR - TO DO LIST</h4>
+          <h4>AGATAR - TODO LIST</h4>
           </a>
         </div><!--/navbar header-->
-      </div><!--container-->
+      </div><!--/container-->
     </nav>
 
     <!--Master Background-->
@@ -74,7 +74,7 @@
                 <div id="display-alert-success" class="alert alert-success hidden"></div>
                 <div id="display-alert-error" class="alert alert-danger hidden"></div>
 
-                <div class="text-right">
+                <div class="text-right" id="btn-clear-all" data-toggle="modal" data-target="#modal-clear-all">
                   <button class="btn btn-danger">Clear All Items!</button>
                 </div><!--/text-right-->
                 <br />
@@ -181,6 +181,25 @@
         </div><!-- /modal-content -->
       </div><!-- /modal-dialog -->
     </div><!-- /modal fade-->
+
+    <!-- Modal clear all-->
+    <div class="modal fade" id="modal-clear-all" tabindex="-1" role="dialog" aria-labelledby="ClearModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="clearModalLabel">Clear all items</h4>
+          </div><!--/modal-header-->
+          <div class="modal-body">
+            <h5>Do you really want to clear all items?</h5>
+          </div><!--/modal-body-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" id="btn-clear">Yes, sure!</button>
+          </div><!--modal-footer-->
+        </div><!--modal content-->
+      </div><!--modal-dialog-->
+    </div><!--modal fade-->
 
 
     <script src="js/jquery.js"></script>
