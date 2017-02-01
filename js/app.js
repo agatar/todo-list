@@ -168,7 +168,7 @@ function getAllTodos(){
 
     }else if(!res.success){
       var info = "<div class='alert alert-info text-center' role='alert'>"
-        +  "<strong>You dont have any added task yet. <br />Why not to add one?</strong>"
+        +  "<strong>You don't have any added task yet. <br />Why not to add one?</strong>"
         +  " Click New todo!"
         +  "</div>";
       $('#all-todos-display').html(info);

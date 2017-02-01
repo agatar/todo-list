@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>To do List</title>
+    <title>To-do List</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -16,7 +17,7 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-          <h4>AGATAR - TODO LIST</h4>
+          <h4>AGATAR - TO-DO LIST</h4>
           </a>
         </div><!--/navbar header-->
       </div><!--/container-->
@@ -34,7 +35,7 @@
     <div class="container-fluid container-text">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-          <h3 class="text-center">TO DO LIST<h3>
+          <h3 class="text-center">TO-DO LIST<h3>
           <hr />
           <p>This application gives you opportunity to plan your tasks.
               You can create, delate and edit your tasks. Feel free to download and use it.</p>
@@ -58,12 +59,12 @@
     <div class="container">
      <div class="row">
        <div class="col-md-6 col-md-offset-3 panel panel-primary panel-main">
-         <h3 class="text-center">TO DO LIST</h3>
+         <h3 class="text-center">TO-DO LIST</h3>
 
            <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#all-todos-tab" aria-controls="all-todos-tab" role="tab" data-toggle="tab">All todos</a></li>
-              <li role="presentation"><a href="#new-todo-tab" aria-controls="new-todo-tab" role="tab" data-toggle="tab">New todo</a></li>
+              <li role="presentation" class="active"><a href="#all-todos-tab" aria-controls="all-todos-tab" role="tab" data-toggle="tab">All to-dos</a></li>
+              <li role="presentation"><a href="#new-todo-tab" aria-controls="new-todo-tab" role="tab" data-toggle="tab">New to-do</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
