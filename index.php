@@ -131,7 +131,7 @@
               <h6 class="text-center">Coded with <span class="glyphicon glyphicon-heart"></span> by AGATAR</h6>
            </div><!--/col-sm-6-->
            <div class="col-sm-6">
-             <h6 class="text-center">Copyright &copy; 2017 AGATAR</h6>
+             <h6 class="text-center">Copyright &copy; <?php echo date('Y'); ?> AGATAR</h6>
            </div><!--/col-sm-6-->
         <div><!--/row-->
 
