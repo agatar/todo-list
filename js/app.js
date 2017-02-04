@@ -5,7 +5,7 @@ $(document).ready(function(){
     if ($(document).scrollTop()>765){
       $("#nav").css('background','#286090').css("border","1px solid #286090");
     }else{
-      $("#nav").css('background','black').css("border", "1px solid black");
+      $("#nav").css('background','#000000').css("border", "1px solid #000000");
     }
   });
 
@@ -168,8 +168,8 @@ function getAllTodos(){
 
     }else if(!res.success){
       var info = "<div class='alert alert-info text-center' role='alert'>"
-        +  "<strong>You don't have any added task yet. <br />Why not to add one?</strong>"
-        +  " Click New todo!"
+        +  "<strong>You don't have any tasks yet. <br />Why don't you add one?</strong>"
+        +  " Click New to-do!"
         +  "</div>";
       $('#all-todos-display').html(info);
     }

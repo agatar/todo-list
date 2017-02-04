@@ -14,5 +14,5 @@
   if($result){
     echo json_encode(["success"=>true]);
   }else{
-    echo json_encode(["success"=>false, "info"=>"There is an error on the backend site!"]);
+    echo json_encode(["success"=>false, "info"=>"There was a server error. Please try again later!"]);
   }

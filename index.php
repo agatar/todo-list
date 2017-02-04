@@ -6,20 +6,29 @@
     <title>To-do List</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/glyphicons-social.css" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   </head>
 
   <body class="body">
     <!--Navigation-->
-    <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top navbar-main" id="nav">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-main" id="nav">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-          <h4>AGATAR - TO-DO LIST</h4>
+            AGATAR
           </a>
-        </div><!--/navbar header-->
+        </div><!--navbar header-->
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="list-unstyled nav navbar-nav navbar-right xs-hidden" id="icons-social">
+            <li><a href="https://twitter.com/arajczakowska"><span class="social social-twitter item-glyph-footer"></span></a></li>
+            <li><a href="https://github.com/agatar"><span class="social social-github item-glyph-footer"></span></a></li>
+            <li><a href="https://www.linkedin.com/in/agata-rajczakowska-b097a8130"><span class="social social-linked-in item-glyph-footer"></span></a></li>
+          </ul>
+       </div><!--navbar-->
       </div><!--/container-->
     </nav>
 
@@ -35,12 +44,14 @@
     <div class="container-fluid container-text">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-          <h3 class="text-center">TO-DO LIST<h3>
+          <h2 class="text-center">TO-DO LIST</h2>
           <hr />
-          <p>This application gives you opportunity to plan your tasks.
-              You can create, delate and edit your tasks. Feel free to download and use it.</p>
-              <br /><br />
-              <p class="text-center" ><a href="#" class="btn btn-md btn-default link">See Demo</a></p>
+          <p>This application allows you to plan your daily tasks.
+              You can create, delete and edit your tasks. Feel free to download the app and use it.</p>
+          <p>Technologies used included: HTML, CSS, PHP, jQuery, MYSQL.</p>
+          <p>License: MIT</p>
+          <br />
+              <p class="text-center" ><a href="#" class="btn btn-md btn-primary link">See Demo</a></p>
               <p class="text-center" id="scroll-point"><a href="#" class="link"><span class="glyphicon glyphicon glyphicon-chevron-down glyph-sign"></span></a></p>
         </div><!--/col-sm-6-->
       </div><!--/row-->
@@ -50,7 +61,7 @@
     <div class="container-fluid container-icons" id="con-icons">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-          <a class="btn btn-default btn-md" href="https://github.com/agatar/todo-list/archive/master.zip" role="button"><span class='glyphicon glyphicon-download-alt'></span> Download project </a>
+          <a class="btn btn-default btn-md" href="https://github.com/agatar/todo-list/archive/master.zip" role="button"><span class='glyphicon glyphicon-download-alt'></span> Download this project </a>
         </div><!--/col-sm-8-->
       </div><!--/row-->
     </div><!--/container-fluid-->
@@ -59,7 +70,7 @@
     <div class="container">
      <div class="row">
        <div class="col-md-6 col-md-offset-3 panel panel-primary panel-main">
-         <h3 class="text-center">TO-DO LIST</h3>
+         <h2 class="text-center">TO-DO LIST</h2>
 
            <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -76,7 +87,7 @@
                 <div id="display-alert-error" class="alert alert-danger hidden"></div>
 
                 <div class="text-right" id="btn-clear-all" data-toggle="modal" data-target="#modal-clear-all">
-                  <button class="btn btn-danger">Clear All Items!</button>
+                  <button class="btn btn-danger">Clear All Tasks!</button>
                 </div><!--/text-right-->
                 <br />
 
@@ -88,7 +99,7 @@
               <!--Secound tab - will be form to add new task-->
               <div role="tabpanel" class="tab-pane" id="new-todo-tab">
                 <form id="new-todo-form">
-                  <h4>Add new item</h4>
+                  <h4>Add new task</h4>
                     <!--error message hidden-->
                     <div id="new-todo-info-error" class="alert alert-danger hidden"></div>
                     <div class="form-group">
@@ -100,7 +111,7 @@
                       <label for="new-todo-description">Description</label>
                       <textarea placeholder="Description" id="new-todo-description" class="form-control" rows="3"></textarea>
                     </div><!--form group-->
-                    <button type="button" id="new-todo-submit" data-loading-text="Loading..." class="btn btn-success">Add new item</button>
+                    <button type="button" id="new-todo-submit" data-loading-text="Loading..." class="btn btn-success">Add new task</button>
                     <button type="button" id="new-todo-reset" class="btn btn-primary">Reset</button>
                 </form>
               </div><!--/new-task-tab-->
@@ -135,10 +146,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="deleteModalLabel">Delete item</h4>
+            <h4 class="modal-title" id="deleteModalLabel">Delete a task</h4>
           </div><!--/modal-header-->
           <div class="modal-body">
-              <h5>Do you really want to delete this item?</h5>
+              <h5>Do you really want to delete this task?</h5>
               <!--hidden modal field-->
               <input type="hidden" id="modal-delete-id" value="">
           </div><!--/modal-body-->
@@ -157,7 +168,7 @@
           <form>
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Edit item</h4>
+              <h4 class="modal-title">Edit a task</h4>
             </div><!--/modal-header-->
             <div class="modal-body">
                <div class="form-group">
@@ -176,7 +187,7 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-success" id="modal-edit-button">Edit item</button>
+              <button type="button" class="btn btn-success" id="modal-edit-button">Edit a task</button>
             </div><!--modal-footer-->
           </form>
         </div><!-- /modal-content -->
@@ -189,10 +200,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="clearModalLabel">Clear all items</h4>
+            <h4 class="modal-title" id="clearModalLabel">Clear all tasks</h4>
           </div><!--/modal-header-->
           <div class="modal-body">
-            <h5>Do you really want to clear all items?</h5>
+            <h5>Do you really want to clear all tasks?</h5>
           </div><!--/modal-body-->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

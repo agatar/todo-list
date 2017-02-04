@@ -9,8 +9,8 @@ p{
 }
 .navbar-main{
   opacity:1;
-  padding-bottom:20px;
 }
+
 
 div.container-main{
   height: 300px;
@@ -45,8 +45,11 @@ hr{
   padding-left:10px;
   padding-right:10px;
 }
+h2 {
+  font-family: 'Indie Flower', cursive;
+}
 
-h4, h3{
+h4, h3, h2{
   padding-bottom:10px;
   font-weight:800;
 }
@@ -64,6 +67,17 @@ div.tab-pane{
   padding-top:5px;
   padding-bottom:5px;
 }
+.item-glyph-footer{
+font-size: 25px;
+}
+
+#icons-social li>a:hover{
+    color:#337ab7;
+  }
+#logo-img{
+    width: 28px;
+    height: 28px;
+}
 
 /* Manipulate css main application - alerts */
 .hidden{
@@ -79,6 +93,7 @@ div.tab-pane{
     height:300px;
     background: url("../images/background-03.jpg") center center no-repeat;
   }
+
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -95,7 +110,6 @@ div.tab-pane{
     height:390px;
     background: url("../images/background-01.jpg") center center no-repeat;
     }
-
 }
 
 /* Large desktops and up ----------- */

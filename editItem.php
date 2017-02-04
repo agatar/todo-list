@@ -9,7 +9,7 @@ $db= new DB();
 $response = $db->editItem($itemId, $title, $description);
 
 if($response == true){
-  echo json_encode(['success'=> true, 'info'=>"You updated your item successfuly!"]);
+  echo json_encode(['success'=> true, 'info'=>"You updated your task successfuly!"]);
 }else {
-  echo json_encode(['success'=> false, 'info'=>"This item has not been updated!"]);
+  echo json_encode(['success'=> false, 'info'=>"This task has not been updated!"]);
 }
