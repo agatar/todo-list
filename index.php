@@ -48,7 +48,7 @@
           <hr />
           <p>This application allows you to plan your daily tasks.
               You can create, delete and edit your tasks. Feel free to download the app and use it.</p>
-          <p>Technologies used included: HTML, CSS, PHP, jQuery, MYSQL.</p>
+          <p>Technologies used included: HTML, CSS, PHP, jQuery, MYSQL</p>
           <p>License: MIT</p>
           <br />
               <p class="text-center" ><a href="#" class="btn btn-md btn-primary link">See Demo</a></p>
@@ -104,12 +104,12 @@
                     <div id="new-todo-info-error" class="alert alert-danger hidden"></div>
                     <div class="form-group">
                       <label for="new-todo-title">Title</label>
-                      <input type="text" class="form-control" id="new-todo-title" placeholder="Title">
+                      <input type="text" class="form-control" maxlength="255" id="new-todo-title" placeholder="Title">
                     </div><!--/form-group-->
 
                     <div class="form-group">
                       <label for="new-todo-description">Description</label>
-                      <textarea placeholder="Description" id="new-todo-description" class="form-control" rows="3"></textarea>
+                      <textarea placeholder="Description" maxlength="255" id="new-todo-description" class="form-control" rows="3"></textarea>
                     </div><!--form group-->
                     <button type="button" id="new-todo-submit" data-loading-text="Loading..." class="btn btn-success">Add new task</button>
                     <button type="button" id="new-todo-reset" class="btn btn-primary">Reset</button>
