@@ -1,0 +1,8 @@
+{
+    "name": "agatarajczakowska/todo-list",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^2.5"
+    },
+    "license": "MIT"
+}
