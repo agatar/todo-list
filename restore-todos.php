@@ -1,5 +1,5 @@
 <?php
-require './Db.php';
+require 'Db.php';
 
 $db = new Db();
 $db->truncateTodos();
